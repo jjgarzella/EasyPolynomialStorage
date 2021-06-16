@@ -19,9 +19,27 @@ We define two file formats
 * `.d2poly`, a single dense 2-variable polynomial,
   is a (zero-indexed) csv file where the (i,j)th coordinate in the file
   is the coefficient of `x^i y^j`. 
+* `.sMVpoly`, a single sparse multi-variable polynomial
+  is a json array of the following shape
+  ```
+  [{ "coef" : 2,
+     "vars" : {
+       "y" : 2,
+       "z" : 1
+       "w" : 1
+     }
+   },
+   { "coef" : 1,
+     "vars" : {
+       "x" : 1,
+       "y" : 1
+     }
+   }]
+  ```
+  such that the example above represents the polynomial `zwy^2 + xy`.
 
 Note:
-if you didn't catch it, the "d" in the file type names stands for dense
+if you didn't catch it, the "d" in the file type names stands for dense and s for sparse
 
 # Usage
 
