@@ -20,23 +20,16 @@ We define two file formats
   is a (zero-indexed) csv file where the (i,j)th coordinate in the file
   is the coefficient of `x^i y^j`. 
 * `.sMVpoly`, a single sparse multi-variable polynomial
-  is a json array of the following shape
+  is a json array of monomials
   ```
   [{ "coef" : 2,
-     "vars" : {
-       "y" : 2,
-       "z" : 1
-       "w" : 1
-     }
+     "vars" : [0, 2, 1, 1]
    },
    { "coef" : 1,
-     "vars" : {
-       "x" : 1,
-       "y" : 1
-     }
+     "vars" : [1, 1, 0, 0]
    }]
   ```
-  such that the example above represents the polynomial `zwy^2 + xy`.
+  so that the ith entry of the array indicates the exponent of `x_i` in the monomial
 
 Note:
 if you didn't catch it, the "d" in the file type names stands for dense and s for sparse
